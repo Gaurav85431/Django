@@ -1,0 +1,67 @@
+<html>
+ <head>
+  <title> {{title}} </title>
+ </head>
+ <body>
+   {% for n in clist %}  
+    <div> {{n}}  </div>
+    {% endfor %}
+    <br>
+    {% for n in clist %}
+    <div> {{forloop.counter}} {{n}} </div> 
+    {% endfor %}
+    <br>
+    
+    {% for n in clist %}
+    <div> {{forloop.last}} {{n}} </div> 
+    {% endfor %}
+    <br>
+    
+    {% for n in clist %}
+    <div> {{forloop.counter0}} {{n}} </div> <!-- index 0 se start hoga -->
+    <!-- <div> {Hello}  </div> -->  <!--:::print n time hello  :: n= no. of item in list-->
+
+    {% endfor%}
+
+   <br>
+
+   <table border= '1' cellpadding='10'> 
+      <tr>
+        <th> Name </th>
+        <th> Phone Number </th>
+      </tr>
+      <br>
+      {% for d in student_details %}
+      <tr>
+        <td> {{d.name}} </td>
+        <td> {{d.Phone}}  </td>
+      </tr>
+      {% endfor %}
+
+      {% for n in num %}
+       <!-- {{n}}  ye ek hi line me aayega -->
+        <div> {{n}}  </div>
+
+      {% endfor %}
+      <h1> No. greater than 20 </h1>
+      {% for n in num %}
+         {% if n > 20 %}
+           <div> {{n}} </div>
+         {% endif %}
+
+     {% endfor %}
+     {% if x|length > 0 %}
+       {% for a in x %}
+         {% if a > 20 %}
+          <div> {{a}}  </div>
+         {% endif %}
+       {% endfor %}
+     {% else %}
+        No data found
+      {% endif %}  
+
+    </table>
+
+
+ </body>
+</html>
